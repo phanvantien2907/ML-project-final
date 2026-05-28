@@ -1,0 +1,98 @@
+Class names VGG11: ['buffalo', 'cats', 'dogs', 'elephant', 'rhino', 'zebra']
+Number of classes VGG11: 6
+Model: "sequential_1"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d_5 (Conv2D)           (None, 256, 256, 64)      1792      
+                                                                 
+ max_pooling2d_3 (MaxPooling  (None, 128, 128, 64)     0         
+ 2D)                                                             
+                                                                 
+ conv2d_6 (Conv2D)           (None, 128, 128, 128)     73856     
+                                                                 
+ max_pooling2d_4 (MaxPooling  (None, 64, 64, 128)      0         
+ 2D)                                                             
+                                                                 
+ conv2d_7 (Conv2D)           (None, 64, 64, 256)       295168    
+                                                                 
+ conv2d_8 (Conv2D)           (None, 64, 64, 256)       590080    
+                                                                 
+ max_pooling2d_5 (MaxPooling  (None, 32, 32, 256)      0         
+ 2D)                                                             
+                                                                 
+ conv2d_9 (Conv2D)           (None, 32, 32, 512)       1180160   
+                                                                 
+ conv2d_10 (Conv2D)          (None, 32, 32, 512)       2359808   
+                                                                 
+ max_pooling2d_6 (MaxPooling  (None, 16, 16, 512)      0         
+ 2D)                                                             
+                                                                 
+ conv2d_11 (Conv2D)          (None, 16, 16, 512)       2359808   
+                                                                 
+ conv2d_12 (Conv2D)          (None, 16, 16, 512)       2359808   
+                                                                 
+ max_pooling2d_7 (MaxPooling  (None, 8, 8, 512)        0         
+ 2D)                                                             
+                                                                 
+ flatten_1 (Flatten)         (None, 32768)             0         
+                                                                 
+ dense_3 (Dense)             (None, 4096)              134221824 
+                                                                 
+ dense_4 (Dense)             (None, 4096)              16781312  
+                                                                 
+ dense_5 (Dense)             (None, 6)                 24582     
+                                                                 
+=================================================================
+Total params: 160,248,198
+Trainable params: 160,248,198
+Non-trainable params: 0
+_________________________________________________________________
+
+===== KẾT QUẢ ĐÁNH GIÁ MÔ HÌNH VGG11 =====
+Test loss     : 1.6685
+Test accuracy : 29.89%
+Epoch có val_loss nhỏ nhất: 24
+
+===== KẾT QUẢ ĐÁNH GIÁ (MACRO) MÔ HÌNH  VGG11 =====
+Accuracy        : 29.89%
+Precision_macro : 34.80%
+Recall_macro    : 27.41%
+F1_macro        : 20.72%
+
+===== BÁO CÁO CHI TIẾT TỪNG LỚP MÔ HÌNH VGG11 =====
+              precision    recall  f1-score   support
+
+     buffalo     0.2212    0.9814    0.3611       376
+        cats     0.0000    0.0000    0.0000       279
+        dogs     0.5385    0.0252    0.0481       278
+    elephant     0.1261    0.0372    0.0575       376
+       rhino     0.2115    0.0293    0.0514       376
+       zebra     0.9908    0.5718    0.7251       376
+
+    accuracy                         0.2989      2061
+   macro avg     0.3480    0.2741    0.2072      2061
+weighted avg     0.3553    0.2989    0.2245      2061
+
+
+===== CHI PHÍ TÍNH TOÁN MÔ HÌNH VGG11 =====
+Tổng số tham số                 : 160,248,198
+Số tham số (triệu)             : 160.2482 M
+Thời gian huấn luyện           : 385.1749 giây
+Thời gian evaluate             : 4.3163 giây
+Thời gian suy luận test set    : 6.9249 giây
+Tổng thời gian (train+infer)   : 392.0998 giây
+Thời gian suy luận / mẫu       : 0.003360 giây/mẫu
+
+===== BẢNG KẾT QUẢ MÔ HÌNH VGG11  =====
+Mô hình             Accuracy (%)   Precision (%)     Recall (%)     F1_macro (%)   Params (M)     Time (s)    
+--------------------------------------------------------------------------------------------------------------
+VGG11               29.89          34.80             27.41          20.72          160.2482       392.10      
+
+========================================================================================================================
+SO SÁNH ALEXNET VÀ VGG11
+========================================================================================================================
+Model          Accuracy       Precision      Recall         F1             Params(M)      Time(s)        
+------------------------------------------------------------------------------------------------------------------------
+AlexNet        70.79          73.61          71.04          71.28          21.61          85.58          
+VGG11          29.89          34.80          27.41          20.72          160.25         392.10         

@@ -1,0 +1,82 @@
+Class names model ALEXNET: ['buffalo', 'cats', 'dogs', 'elephant', 'rhino', 'zebra']
+Number of classes ALEXNET: 6
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d (Conv2D)             (None, 16, 16, 96)        34944     
+                                                                 
+ max_pooling2d (MaxPooling2D  (None, 7, 7, 96)         0         
+ )                                                               
+                                                                 
+ conv2d_1 (Conv2D)           (None, 7, 7, 256)         614656    
+                                                                 
+ max_pooling2d_1 (MaxPooling  (None, 3, 3, 256)        0         
+ 2D)                                                             
+                                                                 
+ conv2d_2 (Conv2D)           (None, 3, 3, 384)         885120    
+                                                                 
+ conv2d_3 (Conv2D)           (None, 3, 3, 384)         1327488   
+                                                                 
+ conv2d_4 (Conv2D)           (None, 3, 3, 256)         884992    
+                                                                 
+ max_pooling2d_2 (MaxPooling  (None, 1, 1, 256)        0         
+ 2D)                                                             
+                                                                 
+ flatten (Flatten)           (None, 256)               0         
+                                                                 
+ dense (Dense)               (None, 4096)              1052672   
+                                                                 
+ dropout (Dropout)           (None, 4096)              0         
+                                                                 
+ dense_1 (Dense)             (None, 4096)              16781312  
+                                                                 
+ dropout_1 (Dropout)         (None, 4096)              0         
+                                                                 
+ dense_2 (Dense)             (None, 6)                 24582     
+                                                                 
+=================================================================
+Total params: 21,605,766
+Trainable params: 21,605,766
+Non-trainable params: 0
+_________________________________________________________________
+
+===== KẾT QUẢ ĐÁNH GIÁ MÔ HÌNH ALEXNET =====
+Test loss     : 0.8782
+Test accuracy : 70.79%
+Epoch có val_loss nhỏ nhất: 17
+
+===== KẾT QUẢ ĐÁNH GIÁ (MACRO) MÔ HÌNH ALEXNET =====
+Accuracy        : 70.79%
+Precision_macro : 73.61%
+Recall_macro    : 71.04%
+F1_macro        : 71.28%
+
+===== BÁO CÁO CHI TIẾT TỪNG LỚP MÔ HÌNH ALEXNET =====
+              precision    recall  f1-score   support
+
+     buffalo     0.9356    0.7340    0.8227       376
+        cats     0.6608    0.6703    0.6655       279
+        dogs     0.6799    0.8022    0.7360       278
+    elephant     0.5620    0.7713    0.6502       376
+       rhino     0.6214    0.6330    0.6271       376
+       zebra     0.9570    0.6516    0.7753       376
+
+    accuracy                         0.7079      2061
+   macro avg     0.7361    0.7104    0.7128      2061
+weighted avg     0.7423    0.7079    0.7139      2061
+
+
+===== CHI PHÍ TÍNH TOÁN MÔ HÌNH ALEXNET =====
+Tổng số tham số                 : 21,605,766
+Số tham số (triệu)             : 21.6058 M
+Thời gian huấn luyện           : 82.6118 giây
+Thời gian evaluate             : 1.9689 giây
+Thời gian suy luận test set    : 2.9675 giây
+Tổng thời gian (train+infer)   : 85.5794 giây
+Thời gian suy luận / mẫu       : 0.001440 giây/mẫu
+
+===== BẢNG KẾT QUẢ MÔ HÌNH ALEXNET  =====
+Mô hình             Accuracy (%)   Precision (%)     Recall (%)     F1_macro (%)   Params (M)     Time (s)    
+--------------------------------------------------------------------------------------------------------------
+AlexNet             70.79          73.61             71.04          71.28          21.6058        85.58       
