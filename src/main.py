@@ -255,7 +255,9 @@ model_2.add(layers.MaxPooling2D(pool_size=(2, 2)))
 # Fully connected
 model_2.add(layers.Flatten())
 model_2.add(layers.Dense(4096, activation='relu'))
+model_2.add(layers.Dropout(0.5))
 model_2.add(layers.Dense(4096, activation='relu'))
+model_2.add(layers.Dropout(0.5))
 model_2.add(layers.Dense(num_classes_model_2, activation='softmax'))
 
 model_2.compile(
@@ -530,12 +532,12 @@ f_model_2.write(f"{model_name_2:<20}"
 # 13.3. SO SÁNH ALEXNET VÀ VGG11
 # =========================
 
-f_model_2.write("\n")
-f_model_2.write("=" * 120 + "\n")
-f_model_2.write("SO SÁNH ALEXNET VÀ VGG11\n")
-f_model_2.write("=" * 120 + "\n")
+f_compare.write("\n")
+f_compare.write("=" * 120 + "\n")
+f_compare.write("SO SÁNH ALEXNET VÀ VGG11\n")
+f_compare.write("=" * 120 + "\n")
 
-f_model_2.write(f"{'Model':<15}"
+f_compare.write(f"{'Model':<15}"
         f"{'Accuracy':<15}"
         f"{'Precision':<15}"
         f"{'Recall':<15}"
@@ -543,9 +545,9 @@ f_model_2.write(f"{'Model':<15}"
         f"{'Params(M)':<15}"
         f"{'Time(s)':<15}\n")
 
-f_model_2.write("-"*120 + "\n")
+f_compare.write("-"*120 + "\n")
 
-f_model_2.write(f"{model_name_1:<15}"
+f_compare.write(f"{model_name_1:<15}"
         f"{acc_model_1*100:<15.2f}"
         f"{precision_macro_model_1*100:<15.2f}"
         f"{recall_macro_model_1*100:<15.2f}"
@@ -553,7 +555,7 @@ f_model_2.write(f"{model_name_1:<15}"
         f"{params_million_model_1:<15.2f}"
         f"{total_time_model_1:<15.2f}\n")
 
-f_model_2.write(f"{model_name_2:<15}"
+f_compare.write(f"{model_name_2:<15}"
         f"{acc_model_2*100:<15.2f}"
         f"{precision_macro_model_2*100:<15.2f}"
         f"{recall_macro_model_2*100:<15.2f}"
